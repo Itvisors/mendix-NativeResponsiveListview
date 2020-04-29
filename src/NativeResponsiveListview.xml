@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="itvisors.nativeresponsivelistview.NativeResponsiveListview" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Native"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Native Responsive Listview</name>
+    <description>Native responsive listview</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="ds" type="datasource" isList="true">
+                <caption>Data source</caption>
+                <description></description>
+            </property>
+
+            <property key="content" type="widgets" dataSource="ds" required="true">
+                <caption>Content</caption>
+                <description></description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
