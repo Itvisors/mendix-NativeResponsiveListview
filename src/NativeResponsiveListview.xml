@@ -13,9 +13,14 @@
                 <description></description>
             </property>
 
-            <property key="content" type="widgets" dataSource="ds" required="true">
+            <property key="content" type="widgets" dataSource="ds">
                 <caption>Content</caption>
                 <description></description>
+            </property>
+            <property key="showVertically" type="expression" required="false" defaultValue="false">
+                <caption>Show items vertically</caption>
+                <description></description>
+                <returnType type="Boolean" />
             </property>
         </propertyGroup>
     </properties>

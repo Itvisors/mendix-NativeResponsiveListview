@@ -4,13 +4,14 @@
  * @author Mendix UI Content Team
  */
 import { ComponentType, ReactNode } from "react";
-import { ListValue, ObjectItem } from "mendix";
+import { DynamicValue, ListValue, ObjectItem } from "mendix";
 
 export interface NativeResponsiveListviewProps<Style> {
     name: string;
     style: Style[];
     ds: ListValue;
     content: (item: ObjectItem) => ReactNode;
+    showVertically?: DynamicValue<boolean>;
 }
 
 export interface NativeResponsiveListviewPreviewProps {
@@ -18,4 +19,5 @@ export interface NativeResponsiveListviewPreviewProps {
     style: string;
     ds: {} | null;
     content: { widgetCount: number; renderer: ComponentType };
+    showVertically: string;
 }

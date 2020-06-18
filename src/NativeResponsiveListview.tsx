@@ -10,12 +10,16 @@ export interface CustomStyle extends Style {
 
 export class NativeResponsiveListview extends Component<NativeResponsiveListviewProps<CustomStyle>> {
     render(): ReactNode {
-        const { ds } = this.props;
+        const { ds, content, style } = this.props;
         if (!ds || !ds.items) {
             return null;
         }
+        let showVertically = false;
+        if (this.props.showVertically && this.props.showVertically.value) {
+            showVertically = true;
+        }
         return (
-            <ResponsiveListview ds={ds} content={this.props.content} style={this.props.style} />
+            <ResponsiveListview ds={ds} content={content} style={style} showVertically={showVertically} />
         );
     }
 }

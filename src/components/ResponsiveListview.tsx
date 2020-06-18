@@ -9,6 +9,7 @@ export interface ResponsiveListviewProps {
     ds: ListValue;
     content: (item: ObjectItem) => ReactNode;
     style: CustomStyle[];
+    showVertically: boolean;
 }
 
 const defaultStyle: CustomStyle = {
@@ -18,16 +19,27 @@ const defaultStyle: CustomStyle = {
     }
 };
 
+const defaultVerticalStyle: CustomStyle = {
+    container: {
+        flexDirection: "column"
+    }
+};
+
 export class ResponsiveListview extends Component<ResponsiveListviewProps> {
-    private readonly styles = flattenStyles(defaultStyle, this.props.style);
 
     render(): ReactNode {
-        const { ds, content } = this.props;
+        const { ds, content, showVertically } = this.props;
+        let styles: CustomStyle;
+        if (showVertically) {
+            styles = flattenStyles(defaultVerticalStyle, this.props.style);
+        } else {
+            styles = flattenStyles(defaultStyle, this.props.style);
+        }
         if (!ds || !ds.items) {
             return null;
         }
         return (
-            <View style={this.styles.container}>
+            <View style={styles.container}>
                 {ds.items.map((item) => <View key={item.id}>{content(item)}</View>)}
             </View>
         );
