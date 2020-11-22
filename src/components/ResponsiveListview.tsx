@@ -26,7 +26,6 @@ const defaultVerticalStyle: CustomStyle = {
 };
 
 export class ResponsiveListview extends Component<ResponsiveListviewProps> {
-
     render(): ReactNode {
         const { ds, content, showVertically } = this.props;
         let styles: CustomStyle;
@@ -40,7 +39,9 @@ export class ResponsiveListview extends Component<ResponsiveListviewProps> {
         }
         return (
             <View style={styles.container}>
-                {ds.items.map((item) => <View key={item.id}>{content(item)}</View>)}
+                {ds.items.map(item => (
+                    <View key={item.id}>{content(item)}</View>
+                ))}
             </View>
         );
     }

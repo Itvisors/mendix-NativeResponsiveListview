@@ -3,14 +3,14 @@
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix UI Content Team
  */
-import { ComponentType, ReactNode } from "react";
-import { DynamicValue, ListValue, ObjectItem } from "mendix";
+import { ComponentType } from "react";
+import { DynamicValue, ListValue, ListWidgetValue } from "mendix";
 
 export interface NativeResponsiveListviewProps<Style> {
     name: string;
     style: Style[];
     ds: ListValue;
-    content: (item: ObjectItem) => ReactNode;
+    content: ListWidgetValue;
     showVertically?: DynamicValue<boolean>;
 }
 
