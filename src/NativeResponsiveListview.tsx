@@ -18,8 +18,6 @@ export class NativeResponsiveListview extends Component<NativeResponsiveListview
         if (this.props.showVertically && this.props.showVertically.value) {
             showVertically = true;
         }
-        return (
-            <ResponsiveListview ds={ds} content={content} style={style} showVertically={showVertically} />
-        );
+        return <ResponsiveListview ds={ds} content={content} style={style} showVertically={showVertically} />;
     }
 }

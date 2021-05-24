@@ -18,6 +18,6 @@ export interface NativeResponsiveListviewPreviewProps {
     class: string;
     style: string;
     ds: {} | null;
-    content: { widgetCount: number; renderer: ComponentType };
+    content: { widgetCount: number; renderer: ComponentType<{caption?: string}> };
     showVertically: string;
 }

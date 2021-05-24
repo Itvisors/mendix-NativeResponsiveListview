@@ -1,13 +1,13 @@
 import { Component, ReactNode, createElement } from "react";
 import { View } from "react-native";
-import { ListValue, ObjectItem } from "mendix";
+import { ListValue, ListWidgetValue } from "mendix";
 
 import { CustomStyle } from "../NativeResponsiveListview";
 import { flattenStyles } from "../utils/common";
 
 export interface ResponsiveListviewProps {
     ds: ListValue;
-    content: (item: ObjectItem) => ReactNode;
+    content: ListWidgetValue;
     style: CustomStyle[];
     showVertically: boolean;
 }
@@ -40,7 +40,7 @@ export class ResponsiveListview extends Component<ResponsiveListviewProps> {
         return (
             <View style={styles.container}>
                 {ds.items.map(item => (
-                    <View key={item.id}>{content(item)}</View>
+                    <View key={item.id}>{content.get(item)}</View>
                 ))}
             </View>
         );
