@@ -3,7 +3,7 @@
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix UI Content Team
  */
-import { ComponentType } from "react";
+import { ComponentType, CSSProperties } from "react";
 import { DynamicValue, ListValue, ListWidgetValue } from "mendix";
 
 export interface NativeResponsiveListviewProps<Style> {
@@ -15,9 +15,11 @@ export interface NativeResponsiveListviewProps<Style> {
 }
 
 export interface NativeResponsiveListviewPreviewProps {
-    class: string;
+    className: string;
     style: string;
-    ds: {} | null;
-    content: { widgetCount: number; renderer: ComponentType<{caption?: string}> };
+    styleObject?: CSSProperties;
+    readOnly: boolean;
+    ds: {} | { type: string } | null;
+    content: { widgetCount: number; renderer: ComponentType<{ caption?: string }> };
     showVertically: string;
 }

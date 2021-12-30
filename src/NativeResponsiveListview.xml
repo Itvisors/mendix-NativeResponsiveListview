@@ -3,9 +3,9 @@
         supportedPlatform="Native"
         xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
-    <name>Native Responsive Listview</name>
+    <name>Responsive Listview</name>
     <description>Native responsive listview</description>
-    <icon>iVBORw0KGgoAAAANSUhEUgAAAEEAAABBCAYAAACO98lFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVHhe7dgxUoNAGIBRYuXVrLySV7Lyanb4CshQiBpkJ0W+14TqJ/PNLCx7med5enRPy+9DKwJFoAgUgSLw4yvy5f3zbbk87OP1+Trj6LwzZqy2s1a/Rfj3JsJNL8vl4XlnzFhtZ61aDhSBIlAEikARKAJFoB0jnSzRcqAIFIEiMPztcIvRb4E9w88TbuGPDz032NNyoAgUgSJQBIpAESgC7RjpPIGWA0WgCNz9wXjmw/A7f3lA3v1TevvJO+J+2/l7Wg4UgSJQBIpAESgCRaAdI31K03KgCBSBIlAEikARKAJFoAgUgSJQBIpAEaZp+gJABntP1AOhxAAAAABJRU5ErkJggg==</icon>
+    <studioProCategory>Data containers</studioProCategory>
     <properties>
         <propertyGroup caption="General">
             <property key="ds" type="datasource" isList="true">
