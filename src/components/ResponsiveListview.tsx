@@ -1,48 +1,30 @@
-import { Component, ReactNode, createElement } from "react";
+import { ReactElement, createElement } from "react";
 import { View } from "react-native";
-import { ListValue, ListWidgetValue } from "mendix";
+import { ListWidgetValue, ObjectItem } from "mendix";
+import { CustomStyle, defaultStyle, defaultVerticalStyle } from "../ui/styles";
 
-import { CustomStyle } from "../NativeResponsiveListview";
-import { flattenStyles } from "../utils/common";
+import { mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
 
 export interface ResponsiveListviewProps {
-    ds: ListValue;
+    dsItems: ObjectItem[];
     content: ListWidgetValue;
     style: CustomStyle[];
     showVertically: boolean;
 }
 
-const defaultStyle: CustomStyle = {
-    container: {
-        flexDirection: "row",
-        flexWrap: "wrap"
+export function ResponsiveListview(props: ResponsiveListviewProps): ReactElement {
+    const { dsItems, content, showVertically } = props;
+    let styles: CustomStyle;
+    if (showVertically) {
+        styles = mergeNativeStyles(defaultVerticalStyle, props.style);
+    } else {
+        styles = mergeNativeStyles(defaultStyle, props.style);
     }
-};
-
-const defaultVerticalStyle: CustomStyle = {
-    container: {
-        flexDirection: "column"
-    }
-};
-
-export class ResponsiveListview extends Component<ResponsiveListviewProps> {
-    render(): ReactNode {
-        const { ds, content, showVertically } = this.props;
-        let styles: CustomStyle;
-        if (showVertically) {
-            styles = flattenStyles(defaultVerticalStyle, this.props.style);
-        } else {
-            styles = flattenStyles(defaultStyle, this.props.style);
-        }
-        if (!ds || !ds.items) {
-            return null;
-        }
-        return (
-            <View style={styles.container}>
-                {ds.items.map(item => (
-                    <View key={item.id}>{content.get(item)}</View>
-                ))}
-            </View>
-        );
-    }
+    return (
+        <View style={styles.container}>
+            {dsItems.map(item => (
+                <View key={item.id}>{content.get(item)}</View>
+            ))}
+        </View>
+    );
 }

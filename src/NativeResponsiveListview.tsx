@@ -1,23 +1,19 @@
-import { Component, ReactNode, createElement } from "react";
-import { ViewStyle } from "react-native";
+import { createElement, ReactElement } from "react";
 import { NativeResponsiveListviewProps } from "../typings/NativeResponsiveListviewProps";
-import { Style } from "./utils/common";
 import { ResponsiveListview } from "./components/ResponsiveListview";
+import { CustomStyle } from "./ui/styles";
 
-export interface CustomStyle extends Style {
-    container: ViewStyle;
-}
-
-export class NativeResponsiveListview extends Component<NativeResponsiveListviewProps<CustomStyle>> {
-    render(): ReactNode {
-        const { ds, content, style } = this.props;
-        if (!ds || !ds.items) {
-            return null;
-        }
-        let showVertically = false;
-        if (this.props.showVertically && this.props.showVertically.value) {
-            showVertically = true;
-        }
-        return <ResponsiveListview ds={ds} content={content} style={style} showVertically={showVertically} />;
+export function NativeResponsiveListview(props: NativeResponsiveListviewProps<CustomStyle>): ReactElement | null {
+    const { ds, showVertically } = props;
+    if (!ds || !ds.items) {
+        return null;
     }
+    return (
+        <ResponsiveListview
+            dsItems={ds.items}
+            content={props.content}
+            style={props.style}
+            showVertically={!!showVertically?.value}
+        />
+    );
 }

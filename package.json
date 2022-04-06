@@ -1,13 +1,14 @@
 {
   "name": "nativeresponsivelistview",
   "widgetName": "NativeResponsiveListview",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Native responsive listview",
   "copyright": "ITvisors 2020",
   "author": "Marcel Groeneweg",
   "engines": {
     "node": ">=12"
   },
+  "license": "Apache-2.0",
   "config": {
     "projectPath": "./test/"
   },
@@ -20,12 +21,8 @@
     "prerelease": "npm run lint",
     "release": "pluggable-widgets-tools release:native"
   },
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/Marcel Groeneweg/nativeresponsivelistview/issues"
-  },
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^9.6.1",
+    "@mendix/pluggable-widgets-tools": "^9.0.0",
     "@types/big.js": "^6.0.2",
     "@types/react": "~17.0.1",
     "@types/react-native": "~0.63.52"
