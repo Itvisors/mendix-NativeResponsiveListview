@@ -22,7 +22,7 @@ public class ListviewItem
 	{
 		Name("Name");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -38,15 +38,17 @@ public class ListviewItem
 
 	public ListviewItem(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "TestModule.ListviewItem"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected ListviewItem(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject listviewItemMendixObject)
 	{
-		if (listviewItemMendixObject == null)
+		if (listviewItemMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("TestModule.ListviewItem", listviewItemMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a TestModule.ListviewItem");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, listviewItemMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.listviewItemMendixObject = listviewItemMendixObject;
 		this.context = context;
@@ -64,6 +66,9 @@ public class ListviewItem
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static testmodule.proxies.ListviewItem initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -78,14 +83,16 @@ public class ListviewItem
 
 	public static java.util.List<testmodule.proxies.ListviewItem> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<testmodule.proxies.ListviewItem> result = new java.util.ArrayList<testmodule.proxies.ListviewItem>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//TestModule.ListviewItem" + xpathConstraint))
-			result.add(testmodule.proxies.ListviewItem.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> testmodule.proxies.ListviewItem.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -94,6 +101,7 @@ public class ListviewItem
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -170,9 +178,9 @@ public class ListviewItem
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final testmodule.proxies.ListviewItem that = (testmodule.proxies.ListviewItem) obj;
@@ -192,7 +200,7 @@ public class ListviewItem
 	 */
 	public static java.lang.String getType()
 	{
-		return "TestModule.ListviewItem";
+		return entityName;
 	}
 
 	/**
