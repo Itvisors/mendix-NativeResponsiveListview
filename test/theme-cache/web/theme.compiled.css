@@ -14906,7 +14906,6 @@ input[type=checkbox] {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  transform: translateZ(0);
 }
 input[type=checkbox]:before, input[type=checkbox]:after {
   position: absolute;
@@ -19697,15 +19696,6 @@ h6,
 }
 
 /* ==========================================================================
-   Tooltip
-
-   Widget styles
-========================================================================== */
-.widget-tooltip-inline {
-  display: inline-block;
-}
-
-/* ==========================================================================
    Helper
 
    Default Mendix helpers
@@ -21201,7 +21191,7 @@ html div.dj_ios .widget-switch.auto .widget-switch-btn-wrapper.checked.widget-sw
 }
 .layout-atlas-responsive .mx-scrollcontainer-slide.mx-scrollcontainer-open > .region-sidebar,
 .layout-atlas-responsive-default .mx-scrollcontainer-slide.mx-scrollcontainer-open > .region-sidebar {
-  width: 52px !important;
+  width: 232px !important;
 }
 .layout-atlas-responsive .mx-scrollcontainer-slide.mx-scrollcontainer-open > .region-sidebar > .mx-scrollcontainer-wrapper,
 .layout-atlas-responsive-default .mx-scrollcontainer-slide.mx-scrollcontainer-open > .region-sidebar > .mx-scrollcontainer-wrapper {
@@ -21210,7 +21200,7 @@ html div.dj_ios .widget-switch.auto .widget-switch-btn-wrapper.checked.widget-sw
 .layout-atlas-responsive .mx-scrollcontainer-slide .region-sidebar > .mx-scrollcontainer-wrapper,
 .layout-atlas-responsive-default .mx-scrollcontainer-slide .region-sidebar > .mx-scrollcontainer-wrapper {
   z-index: 2;
-  left: -52px;
+  left: 0 !important;
   background-color: inherit;
 }
 @media (max-width: 767px) {
