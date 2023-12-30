@@ -1,4 +1,4 @@
-import { ReactElement, createElement } from "react";
+import { ReactElement, ReactNode, createElement } from "react";
 import { View } from "react-native";
 import { ListWidgetValue, ObjectItem } from "mendix";
 import { CustomStyle, defaultStyle, defaultVerticalStyle } from "../ui/styles";
@@ -10,10 +10,11 @@ export interface ResponsiveListviewProps {
     content: ListWidgetValue;
     style: CustomStyle[];
     showVertically: boolean;
+    widgetName: string;
 }
 
 export function ResponsiveListview(props: ResponsiveListviewProps): ReactElement {
-    const { dsItems, content, showVertically } = props;
+    const { dsItems, content, showVertically, widgetName } = props;
     let styles: CustomStyle;
     if (showVertically) {
         styles = mergeNativeStyles(defaultVerticalStyle, props.style);
@@ -21,9 +22,11 @@ export function ResponsiveListview(props: ResponsiveListviewProps): ReactElement
         styles = mergeNativeStyles(defaultStyle, props.style);
     }
     return (
-        <View style={styles.container}>
-            {dsItems.map(item => (
-                <View key={item.id}>{content.get(item)}</View>
+        <View style={styles.container} testID={widgetName}>
+            {dsItems.map((item, index) => (
+                <View key={item.id} testID={`${widgetName}$listviewItem${index}`}>
+                    {content.get(item) as ReactNode}
+                </View>
             ))}
         </View>
     );

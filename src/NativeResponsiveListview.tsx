@@ -14,6 +14,7 @@ export function NativeResponsiveListview(props: NativeResponsiveListviewProps<Cu
             content={props.content}
             style={props.style}
             showVertically={!!showVertically?.value}
+            widgetName={props.name}
         />
     );
 }
