@@ -117,13 +117,13 @@ public class ListviewItem implements com.mendix.systemwideinterfaces.core.IEntit
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
 	}
 
-	@Override
+	@java.lang.Override
 	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return listviewItemMendixObject;
 	}
 
-	@Override
+	@java.lang.Override
 	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
