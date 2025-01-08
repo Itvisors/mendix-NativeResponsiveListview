@@ -24,7 +24,7 @@ export function ResponsiveListview(props: ResponsiveListviewProps): ReactElement
     return (
         <View style={styles.container} testID={widgetName}>
             {dsItems.map((item, index) => (
-                <View key={item.id} testID={`${widgetName}$listviewItem${index}`}>
+                <View key={item.id} style={styles.itemContainer} testID={`${widgetName}$listviewItem${index}`}>
                     {content.get(item) as ReactNode}
                 </View>
             ))}

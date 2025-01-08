@@ -2,7 +2,7 @@
 //
 // WARNING: Code you write here will be lost the next time you deploy the project.
 
-package testmodule.proxies;
+package testnativeresponsivelistview.proxies;
 
 public class ListviewItem implements com.mendix.systemwideinterfaces.core.IEntityProxy
 {
@@ -13,7 +13,7 @@ public class ListviewItem implements com.mendix.systemwideinterfaces.core.IEntit
 	/**
 	 * Internal name of this entity
 	 */
-	public static final java.lang.String entityName = "TestModule.ListviewItem";
+	public static final java.lang.String entityName = "TestNativeResponsiveListview.ListviewItem";
 
 	/**
 	 * Enum describing members of this entity
@@ -61,23 +61,23 @@ public class ListviewItem implements com.mendix.systemwideinterfaces.core.IEntit
 	 * @param mendixObject The Mendix object for the new instance
 	 * @return a new instance of this proxy class
 	 */
-	public static testmodule.proxies.ListviewItem initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
+	public static testnativeresponsivelistview.proxies.ListviewItem initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		return new testmodule.proxies.ListviewItem(context, mendixObject);
+		return new testnativeresponsivelistview.proxies.ListviewItem(context, mendixObject);
 	}
 
-	public static testmodule.proxies.ListviewItem load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
+	public static testnativeresponsivelistview.proxies.ListviewItem load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
-		return testmodule.proxies.ListviewItem.initialize(context, mendixObject);
+		return testnativeresponsivelistview.proxies.ListviewItem.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<testmodule.proxies.ListviewItem> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
+	public static java.util.List<testnativeresponsivelistview.proxies.ListviewItem> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
 			.execute(context)
 			.stream()
-			.map(obj -> testmodule.proxies.ListviewItem.initialize(context, obj))
+			.map(obj -> testnativeresponsivelistview.proxies.ListviewItem.initialize(context, obj))
 			.collect(java.util.stream.Collectors.toList());
 	}
 
@@ -137,7 +137,7 @@ public class ListviewItem implements com.mendix.systemwideinterfaces.core.IEntit
 		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
-			final testmodule.proxies.ListviewItem that = (testmodule.proxies.ListviewItem) obj;
+			final testnativeresponsivelistview.proxies.ListviewItem that = (testnativeresponsivelistview.proxies.ListviewItem) obj;
 			return getMendixObject().equals(that.getMendixObject());
 		}
 		return false;

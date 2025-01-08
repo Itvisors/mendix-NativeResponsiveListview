@@ -2,14 +2,14 @@
 //
 // WARNING: Code you write here will be lost the next time you deploy the project.
 
-package testmodule.proxies;
+package testnativeresponsivelistview.proxies;
 
 public class TestImage extends system.proxies.Image
 {
 	/**
 	 * Internal name of this entity
 	 */
-	public static final java.lang.String entityName = "TestModule.TestImage";
+	public static final java.lang.String entityName = "TestNativeResponsiveListview.TestImage";
 
 	/**
 	 * Enum describing members of this entity
@@ -59,23 +59,23 @@ public class TestImage extends system.proxies.Image
 	 * @param mendixObject The Mendix object for the new instance
 	 * @return a new instance of this proxy class
 	 */
-	public static testmodule.proxies.TestImage initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
+	public static testnativeresponsivelistview.proxies.TestImage initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		return new testmodule.proxies.TestImage(context, mendixObject);
+		return new testnativeresponsivelistview.proxies.TestImage(context, mendixObject);
 	}
 
-	public static testmodule.proxies.TestImage load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
+	public static testnativeresponsivelistview.proxies.TestImage load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
-		return testmodule.proxies.TestImage.initialize(context, mendixObject);
+		return testnativeresponsivelistview.proxies.TestImage.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<testmodule.proxies.TestImage> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
+	public static java.util.List<testnativeresponsivelistview.proxies.TestImage> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
 			.execute(context)
 			.stream()
-			.map(obj -> testmodule.proxies.TestImage.initialize(context, obj))
+			.map(obj -> testnativeresponsivelistview.proxies.TestImage.initialize(context, obj))
 			.collect(java.util.stream.Collectors.toList());
 	}
 
@@ -87,7 +87,7 @@ public class TestImage extends system.proxies.Image
 		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
-			final testmodule.proxies.TestImage that = (testmodule.proxies.TestImage) obj;
+			final testnativeresponsivelistview.proxies.TestImage that = (testnativeresponsivelistview.proxies.TestImage) obj;
 			return getMendixObject().equals(that.getMendixObject());
 		}
 		return false;
