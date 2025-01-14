@@ -12,6 +12,7 @@ export function NativeResponsiveListview(props: NativeResponsiveListviewProps<Cu
         <ResponsiveListview
             dsItems={ds.items}
             content={props.content}
+            additionalContentList={props.additionalContentList}
             style={props.style}
             showVertically={!!showVertically?.value}
             widgetName={props.name}

@@ -6,11 +6,20 @@
 import { ComponentType, CSSProperties, ReactNode } from "react";
 import { DynamicValue, ListValue, ListWidgetValue } from "mendix";
 
+export interface AdditionalContentListType {
+    additionalContent: ListWidgetValue;
+}
+
+export interface AdditionalContentListPreviewType {
+    additionalContent: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
+}
+
 export interface NativeResponsiveListviewProps<Style> {
     name: string;
     style: Style[];
     ds: ListValue;
     content: ListWidgetValue;
+    additionalContentList: AdditionalContentListType[];
     showVertically?: DynamicValue<boolean>;
 }
 
@@ -27,5 +36,6 @@ export interface NativeResponsiveListviewPreviewProps {
     translate: (text: string) => string;
     ds: {} | { caption: string } | { type: string } | null;
     content: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
+    additionalContentList: AdditionalContentListPreviewType[];
     showVertically: string;
 }

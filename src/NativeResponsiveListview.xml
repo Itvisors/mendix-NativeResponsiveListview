@@ -17,6 +17,20 @@
                 <caption>Content</caption>
                 <description></description>
             </property>
+
+            <property key="additionalContentList" type="object" isList="true" required="false">
+                <caption>Additional content</caption>
+                <description>Additional content, only used when items are shown horizontally. Use it to create several rows, making sure the content in each row aligns across all items. Note that this only works properly when all items fit on one line!!</description>
+                <properties>
+                    <propertyGroup caption="Content">
+                        <property key="additionalContent" type="widgets" dataSource="../ds">
+                            <caption>Additional content</caption>
+                            <description></description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+
             <property key="showVertically" type="expression" required="false" defaultValue="false">
                 <caption>Show items vertically</caption>
                 <description></description>

@@ -20,7 +20,11 @@ public class ListviewItem implements com.mendix.systemwideinterfaces.core.IEntit
 	 */
 	public enum MemberNames
 	{
-		Name("Name");
+		Name("Name"),
+		IsAdditionalContent("IsAdditionalContent"),
+		Caption("Caption"),
+		Text("Text"),
+		Explanation("Explanation");
 
 		private final java.lang.String metaName;
 
@@ -115,6 +119,150 @@ public class ListviewItem implements com.mendix.systemwideinterfaces.core.IEntit
 	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String name)
 	{
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
+	}
+
+	/**
+	 * @return value of IsAdditionalContent
+	 */
+	public final java.lang.Boolean getIsAdditionalContent()
+	{
+		return getIsAdditionalContent(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of IsAdditionalContent
+	 */
+	public final java.lang.Boolean getIsAdditionalContent(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.IsAdditionalContent.toString());
+	}
+
+	/**
+	 * Set value of IsAdditionalContent
+	 * @param isadditionalcontent
+	 */
+	public final void setIsAdditionalContent(java.lang.Boolean isadditionalcontent)
+	{
+		setIsAdditionalContent(getContext(), isadditionalcontent);
+	}
+
+	/**
+	 * Set value of IsAdditionalContent
+	 * @param context
+	 * @param isadditionalcontent
+	 */
+	public final void setIsAdditionalContent(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean isadditionalcontent)
+	{
+		getMendixObject().setValue(context, MemberNames.IsAdditionalContent.toString(), isadditionalcontent);
+	}
+
+	/**
+	 * @return value of Caption
+	 */
+	public final java.lang.String getCaption()
+	{
+		return getCaption(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Caption
+	 */
+	public final java.lang.String getCaption(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Caption.toString());
+	}
+
+	/**
+	 * Set value of Caption
+	 * @param caption
+	 */
+	public final void setCaption(java.lang.String caption)
+	{
+		setCaption(getContext(), caption);
+	}
+
+	/**
+	 * Set value of Caption
+	 * @param context
+	 * @param caption
+	 */
+	public final void setCaption(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String caption)
+	{
+		getMendixObject().setValue(context, MemberNames.Caption.toString(), caption);
+	}
+
+	/**
+	 * @return value of Text
+	 */
+	public final java.lang.String getText()
+	{
+		return getText(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Text
+	 */
+	public final java.lang.String getText(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Text.toString());
+	}
+
+	/**
+	 * Set value of Text
+	 * @param text
+	 */
+	public final void setText(java.lang.String text)
+	{
+		setText(getContext(), text);
+	}
+
+	/**
+	 * Set value of Text
+	 * @param context
+	 * @param text
+	 */
+	public final void setText(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String text)
+	{
+		getMendixObject().setValue(context, MemberNames.Text.toString(), text);
+	}
+
+	/**
+	 * @return value of Explanation
+	 */
+	public final java.lang.String getExplanation()
+	{
+		return getExplanation(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Explanation
+	 */
+	public final java.lang.String getExplanation(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Explanation.toString());
+	}
+
+	/**
+	 * Set value of Explanation
+	 * @param explanation
+	 */
+	public final void setExplanation(java.lang.String explanation)
+	{
+		setExplanation(getContext(), explanation);
+	}
+
+	/**
+	 * Set value of Explanation
+	 * @param context
+	 * @param explanation
+	 */
+	public final void setExplanation(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String explanation)
+	{
+		getMendixObject().setValue(context, MemberNames.Explanation.toString(), explanation);
 	}
 
 	@java.lang.Override
