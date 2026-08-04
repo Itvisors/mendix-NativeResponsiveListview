@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, createElement } from "react";
+import { ReactElement, ReactNode } from "react";
 import { View } from "react-native";
 import { ListWidgetValue, ObjectItem } from "mendix";
 import { CustomStyle, defaultStyle, defaultVerticalStyle } from "../ui/styles";

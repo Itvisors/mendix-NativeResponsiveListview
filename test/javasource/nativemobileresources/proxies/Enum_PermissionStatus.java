@@ -6,11 +6,11 @@ package nativemobileresources.proxies;
 
 public enum Enum_PermissionStatus
 {
-	unavailable("575972b6-ad4e-4757-8adc-97291eef937d"),
-	denied("4a7ff99b-0771-487b-be42-5c5d32d53927"),
-	limited("c015e65f-6b6d-4e57-a64c-52893bbc50ba"),
-	granted("a8390481-79cc-4cfe-ac70-ef4352340283"),
-	blocked("e701d093-d8e4-4f7e-84ce-c7ed55cb849e");
+	unavailable("49771a0e-4371-43c4-8703-4d6933dea24e"),
+	denied("bd8686a7-ecbe-48e0-b198-9a95250963d8"),
+	limited("df833ef1-59e7-4bf6-aec1-c113a25802ab"),
+	granted("527858c0-18d2-4d59-b324-b50bfcd2a792"),
+	blocked("b0ea3530-6584-4644-ad02-259e8fa54e3d");
 
 	private final java.lang.String i18nCaptionKey;
 	
